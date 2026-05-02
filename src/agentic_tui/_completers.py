@@ -10,7 +10,7 @@ from pathlib import Path
 from prompt_toolkit.completion import CompleteEvent, Completion, Completer
 from prompt_toolkit.document import Document
 
-from agentui._commands import CommandRegistry
+from agentic_tui._commands import CommandRegistry
 
 # Optional pathspec for .gitignore parsing
 try:

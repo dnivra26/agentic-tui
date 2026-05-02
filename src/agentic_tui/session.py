@@ -1,4 +1,4 @@
-"""Session — the main entry point for agentui.
+"""Session — the main entry point for agentic_tui.
 
 Owns the Rich Console, LiveRegion, and InputHandler. Provides the
 public API for building an agent chat loop.
@@ -13,17 +13,17 @@ from typing import Any
 from prompt_toolkit.history import History
 from rich.console import Console
 
-from agentui._commands import CommandRegistry
-from agentui._confirm import choose_prompt, confirm_prompt, input_prompt
-from agentui._input import InputHandler
-from agentui._live_region import LiveRegion
-from agentui.turn import Turn
+from agentic_tui._commands import CommandRegistry
+from agentic_tui._confirm import choose_prompt, confirm_prompt, input_prompt
+from agentic_tui._input import InputHandler
+from agentic_tui._live_region import LiveRegion
+from agentic_tui.turn import Turn
 
 CommandHandler = Callable[["Session", str], Awaitable[None]]
 
 
 class Session:
-    """Main entry point for agentui.
+    """Main entry point for agentic_tui.
 
     Usage::
 
@@ -92,7 +92,7 @@ class Session:
 
     async def prompt(self, message: str = "> ", **kwargs: Any) -> str:
         """Get user input with slash command and @-file completion."""
-        from agentui._completers import AgentCompleter
+        from agentic_tui._completers import AgentCompleter
 
         completer = AgentCompleter(self._commands)
         return await self._input.prompt(message, completer=completer, **kwargs)

@@ -7,7 +7,7 @@ from collections.abc import Sequence
 from rich.console import Console
 from rich.text import Text
 
-from agentui._input import InputHandler
+from agentic_tui._input import InputHandler
 
 
 async def confirm_prompt(

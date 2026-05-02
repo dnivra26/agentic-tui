@@ -13,7 +13,7 @@ from collections.abc import Callable
 
 from rich.markdown import Markdown
 
-from agentui._constants import DEFAULT_REFRESH_RATE
+from agentic_tui._constants import DEFAULT_REFRESH_RATE
 
 
 class StreamingMarkdownRenderer:

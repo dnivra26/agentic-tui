@@ -1,4 +1,4 @@
-# agentui
+# agentic_tui
 
 A small, opinionated Python library for building coding-agent terminal UIs.
 
@@ -15,25 +15,25 @@ The options today are bad:
 
 Other ecosystems have closed this gap — `pi-tui` in TypeScript (powering Mastra Code), `claude-code-kit` (extracted Claude Code components), Bubble Tea + Lip Gloss in Go, Ratatui in Rust. Python had no equivalent.
 
-agentui exists because building a polished agent UI shouldn't require 2000 lines of rendering plumbing. It should take 30.
+agentic_tui exists because building a polished agent UI shouldn't require 2000 lines of rendering plumbing. It should take 30.
 
 ## Install
 
 ```bash
-pip install agentui
+pip install agentic-tui
 ```
 
 For .gitignore-aware @-file completion:
 
 ```bash
-pip install agentui[gitignore]
+pip install agentic-tui[gitignore]
 ```
 
 ## Quick Start
 
 ```python
 import asyncio
-from agentui import Session
+from agentic_tui import Session
 
 async def main():
     async with Session() as ui:
@@ -124,7 +124,7 @@ async with ui.assistant_turn() as turn:
 
 ## Architecture
 
-agentui is a thin orchestration layer over two battle-tested libraries:
+agentic_tui is a thin orchestration layer over two battle-tested libraries:
 
 - **Rich** — rendering (markdown, syntax highlighting, panels, tables)
 - **prompt\_toolkit** — input (history, key bindings, completion)
@@ -136,7 +136,7 @@ User application (agent loop)
          |
          | render calls + input prompts
          v
-agentui
+agentic_tui
   ┌────────────┐   ┌───────────────┐
   │ Live region │   │ Input session  │
   │ manager     │   │ (slash cmds,   │

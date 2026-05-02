@@ -1,4 +1,4 @@
-"""Live region manager — the core of agentui.
+"""Live region manager — the core of agentic_tui.
 
 Manages an in-place updateable region of terminal output using
 synchronized output (DEC private mode 2026) for flicker-free rendering.
@@ -15,7 +15,7 @@ from io import StringIO
 
 from rich.console import Console, RenderableType
 
-from agentui._constants import (
+from agentic_tui._constants import (
     CARRIAGE_RETURN,
     CURSOR_HIDE,
     CURSOR_SHOW,

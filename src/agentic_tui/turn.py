@@ -14,8 +14,8 @@ from typing import Any
 
 from rich.console import Console, Group, RenderableType
 
-from agentui._live_region import LiveRegion
-from agentui._renderer import StreamingMarkdownRenderer
+from agentic_tui._live_region import LiveRegion
+from agentic_tui._renderer import StreamingMarkdownRenderer
 
 
 class Turn:
@@ -107,7 +107,7 @@ class Turn:
                 result = await execute_tool(...)
                 await tc.complete(result)
         """
-        from agentui._tool_call import ToolCallBlock, ToolCallContext
+        from agentic_tui._tool_call import ToolCallBlock, ToolCallContext
 
         self._active_md = None  # next markdown goes to a new renderer
         block = ToolCallBlock(name, arguments, on_update=self._rerender)
@@ -123,7 +123,7 @@ class Turn:
             block = turn.diff("src/main.py", unified_diff_string)
             approved = await block.confirm()
         """
-        from agentui._diff import DiffBlock
+        from agentic_tui._diff import DiffBlock
 
         self._active_md = None
         block = DiffBlock(path, patch, on_confirm=self._confirm_for_diff)
@@ -133,8 +133,8 @@ class Turn:
 
     async def _confirm_for_diff(self) -> bool:
         """Temporarily commit the live region, prompt user, re-open."""
-        from agentui._confirm import confirm_prompt
-        from agentui._input import InputHandler
+        from agentic_tui._confirm import confirm_prompt
+        from agentic_tui._input import InputHandler
 
         self._live_region.commit()
         handler = InputHandler()

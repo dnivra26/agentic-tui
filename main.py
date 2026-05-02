@@ -1,4 +1,4 @@
-"""Example: full-featured agentui demo.
+"""Example: full-featured agentic_tui demo.
 
 Showcases streaming markdown, tool calls, diffs, confirmations,
 slash commands, @-file picker, and interrupt handling (Ctrl-C).
@@ -6,7 +6,7 @@ slash commands, @-file picker, and interrupt handling (Ctrl-C).
 
 import asyncio
 
-from agentui import Session
+from agentic_tui import Session
 
 
 async def fake_stream(text: str):
@@ -68,7 +68,7 @@ SAMPLE_DIFF = """\
 
 async def main():
     async with Session() as ui:
-        ui.print("[bold green]agentui v0.3 demo[/bold green]")
+        ui.print("[bold green]agentic_tui v0.3 demo[/bold green]")
         ui.print("[dim]Features: streaming markdown, tool calls, diffs, confirmations[/dim]")
         ui.print("[dim]Try: /help, @filename, Ctrl-C during streaming[/dim]\n")
 
